@@ -1,0 +1,48 @@
+[project]
+name = "cdc-places-nl-sql"
+version = "0.1.0"
+description = "Natural-language SQL assistant for CDC PLACES health data, powered by the Anthropic Claude API"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.30",
+    "snowflake-connector-python>=3.6",
+    "snowflake-sqlalchemy>=1.5",
+    "sqlparse>=0.5",
+    "streamlit>=1.35",
+    "python-dotenv>=1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.5",
+    "mypy>=1.10",
+    "pytest>=8.1",
+    "pre-commit>=3.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cdc_places_nl_sql"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "N"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: marks tests that make live API/LLM/DB calls (deselect with -m 'not integration')",
+]
