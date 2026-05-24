@@ -3,7 +3,7 @@
 Natural-language SQL assistant for CDC PLACES health data. Translates plain-English questions into Snowflake SQL using the Anthropic Claude API, executes them, and returns plain-English answers.
 
 [![CI](https://github.com/qowboykay/cdc-places-nl-sql/actions/workflows/ci.yml/badge.svg)](https://github.com/qowboykay/cdc-places-nl-sql/actions/workflows/ci.yml)
-![Status](https://img.shields.io/badge/status-Phase%205%20pending-lightgrey)
+![Status](https://img.shields.io/badge/status-Phase%201%20complete-green)
 
 > **Depends on [cdc-places-pipeline](https://github.com/qowboykay/cdc-places-pipeline).** The Snowflake schema this project queries is built and maintained by that pipeline.
 
@@ -97,9 +97,9 @@ Show me counties where both smoking and diabetes prevalence exceed 20%.
 
 | Phase | Description | Status |
 |---|---|---|
-| 5 | NL-SQL foundation: schema introspection, Claude integration, SQL safety, CLI | Pending |
-| 6 | Streamlit chat interface, error recovery, SQLite cache | Pending |
-| 7 | Polish, docs, tagged release | Pending |
+| 1 | NL-SQL foundation: schema introspection, Claude integration, SQL safety, CLI | Done |
+| 2 | Streamlit chat interface, error recovery, SQLite cache | Pending |
+| 3 | Polish, docs, tagged release | Pending |
 
 ---
 
