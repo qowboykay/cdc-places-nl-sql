@@ -180,6 +180,8 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "anthropic" },
+    { name = "click" },
+    { name = "pandas" },
     { name = "python-dotenv" },
     { name = "snowflake-connector-python" },
     { name = "snowflake-sqlalchemy" },
@@ -198,6 +200,8 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "anthropic", specifier = ">=0.30" },
+    { name = "click", specifier = ">=8.1" },
+    { name = "pandas", specifier = ">=2.0" },
     { name = "python-dotenv", specifier = ">=1.0" },
     { name = "snowflake-connector-python", specifier = ">=3.6" },
     { name = "snowflake-sqlalchemy", specifier = ">=1.5" },

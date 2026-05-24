@@ -10,9 +10,14 @@ dependencies = [
     "snowflake-connector-python>=3.6",
     "snowflake-sqlalchemy>=1.5",
     "sqlparse>=0.5",
+    "pandas>=2.0",
+    "click>=8.1",
     "streamlit>=1.35",
     "python-dotenv>=1.0",
 ]
+
+[project.scripts]
+cdc-places-nl-sql = "cdc_places_nl_sql.cli:cli"
 
 [dependency-groups]
 dev = [
