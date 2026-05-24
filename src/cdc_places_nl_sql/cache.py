@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import os
 import sqlite3
 
@@ -49,7 +50,7 @@ def get_cached(question: str) -> tuple[str, pd.DataFrame, str] | None:
     if row is None:
         return None
     sql, result_json, summary = row
-    df: pd.DataFrame = pd.read_json(result_json, orient="split")
+    df: pd.DataFrame = pd.read_json(io.StringIO(result_json), orient="split")
     return sql, df, summary
 
 
