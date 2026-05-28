@@ -11,30 +11,7 @@ Natural-language SQL assistant for CDC PLACES health data. Translates plain-Engl
 
 ## Architecture
 
-```
-User question  (Streamlit chat or CLI)
-        |
-        v
-  Schema introspection  (INFORMATION_SCHEMA -> compact schema description)
-        |
-        v
-  SQLite cache lookup  (skip Claude + Snowflake on repeated questions)
-        |
-        v
-  Claude Sonnet  (question + schema -> read-only Snowflake SQL)
-        |
-        v
-  SQL safety validator  (sqlparse: reject non-SELECT, inject LIMIT cap)
-        |
-        v
-  Snowflake  (execute validated query -> DataFrame)
-        |
-        v
-  Claude Haiku  (DataFrame + question -> plain-English answer)
-        |
-        v
-  Streamlit chat interface  (expandable SQL, result table, plain-English summary)
-```
+![Architecture diagram](docs/architecture.png)
 
 ---
 
